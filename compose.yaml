@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: buggy-tracker-mongo
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - buggy-mongo-data:/data/db
+
+volumes:
+  buggy-mongo-data:
